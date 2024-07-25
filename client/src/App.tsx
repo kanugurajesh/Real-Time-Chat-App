@@ -1,31 +1,32 @@
-import { RootState } from "./app/store";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "./app/features/counter/counterSlice";
+// import { RootState } from "./app/store";
+// import { useSelector, useDispatch } from "react-redux";
+// import { increment, decrement } from "./app/features/counter/counterSlice";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import ChatPage from "./components/ChatPage";
+import { io } from "socket.io-client";
+const socket = io("http://localhost:3000");
 
 function App() {
-  const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useDispatch();
+  
+  // const count = useSelector((state: RootState) => state.counter.value);
+  // const dispatch = useDispatch();
+
+  // const handleSubmit = () => {
+  //   socket.emit("message", "Rajesh");
+  //   socket.on("response", (data) => console.log(data));
+  // };
 
   return (
-    <main>
+    <BrowserRouter>
       <div>
-        <div>
-          <button
-            aria-label="Increment value"
-            onClick={() => dispatch(increment())}
-          >
-            Increment
-          </button>
-          <span>{count}</span>
-          <button
-            aria-label="Decrement value"
-            onClick={() => dispatch(decrement())}
-          >
-            Decrement
-          </button>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home socket={socket} />} />
+          <Route path="/chat" element={<ChatPage socket={socket} />} />
+        </Routes>
       </div>
-    </main>
+    </BrowserRouter>
   );
 }
 
