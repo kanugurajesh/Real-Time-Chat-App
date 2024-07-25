@@ -9,7 +9,7 @@ import { io } from "socket.io-client";
 const socket = io("http://localhost:3000");
 
 function App() {
-  
+
   // const count = useSelector((state: RootState) => state.counter.value);
   // const dispatch = useDispatch();
 
@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
-          <Route path="/" element={<Home socket={socket} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/chat" element={<ChatPage socket={socket} />} />
         </Routes>
       </div>
