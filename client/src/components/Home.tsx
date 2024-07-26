@@ -14,8 +14,8 @@ const Home = () => {
 
   return (
     <main className="flex flex-col justify-center items-center h-screen">
-      <form action="" onSubmit={handleSubmit} className="border-2 border-black shadow-2xl rounded-xl p-14 flex flex-col gap-4">
-        <h2 className="font-bold text-black text-center mb-6 text-2xl">Sign in to chat</h2>
+      <form action="" onSubmit={handleSubmit} className="border-2 border-black shadow-2xl rounded-xl p-14 flex flex-col gap-4 cursor-pointer hover:scale-105 transition-all ease-in-out duration-300">
+        <h2 className="font-bold text-black text-center mb-6 text-2xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text">Sign in to chat</h2>
         <label htmlFor="" className="font-semibold">Username</label>
         <input
           type="text"
