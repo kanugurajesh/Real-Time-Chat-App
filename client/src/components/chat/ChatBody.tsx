@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
 const ChatBody = () => {
-
   // intializing the navigate
   const navigate = useNavigate();
 
@@ -13,11 +12,11 @@ const ChatBody = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <header className="flex items-center gap-4">
+    <div className="flex flex-col items-center w-full">
+      <header className="flex items-center gap-4 justify-between w-full">
         <p className="font-semibold text-xl">Interact with friends</p>
         <button
-          className="p-4 bg-red-700 text-white font-bold rounded-md hover:bg-white hover:text-red-700 border-2 border-red-700 transition-all ease-in-out duration-300"
+          className="px-4 py-2 bg-red-700 text-white font-bold rounded-md hover:bg-white hover:text-red-700 border-2 border-red-700 transition-all ease-in-out duration-300"
           onClick={handleLeaveChat}
         >
           Leave Chat
